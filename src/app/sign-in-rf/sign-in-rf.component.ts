@@ -16,7 +16,7 @@ import { NoWhitespaceValidator } from '../validators/no-whitespace.validator';
   styleUrls: ['./sign-in-rf.component.css']
 })
 export class SignInRfComponent {
-  signInForms: FormGroup;
+  signInForm: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
@@ -46,7 +46,7 @@ export class SignInRfComponent {
   }
 
   onSubmit(): void {
-    console.log(this.signInForms);
+    console.log(this.signInForm);
   }
 
   isUserNameDuplicated(control: AbstractControl): Observable<ValidationErrors> {
