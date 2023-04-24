@@ -1,11 +1,11 @@
 <div class="container">
-	<form class="register-form" [formGroup]="registerForm" autocomplete="off" (ngSubmit)="formSubmit$.next()">
+	<form class="register-form" [formGroup]="registerForm" autocomplete="off" (ngSubmit)="formSubmit$">
 		<h2>Register</h2>
 		<div class="row-control">
 			<mat-form-field appearance="outline">
 				<mat-label>Username</mat-label>
 				<input matInput placeholder="Username" formControlName="username">
-				<mat-error *ngIf="registerForm.get('username')?.errors?.usernameDuplicated">Duplicated username!
+				<mat-error *ngIf="registerForm.get('username')?.errors['usernameDuplicated']">Duplicated username!
 				</mat-error>
 			</mat-form-field>
 			<pre>{{ registerForm.get("username")?.errors | json }}</pre>
