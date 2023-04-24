@@ -80,8 +80,8 @@ export class RegisterComponent implements OnInit {
 
   validateControlsValue(firstControlName: string, secondControlName: string) {
     return function(formGroup: FormGroup) {
-      const { value: firstControlValue } = formGroup.get(firstControlName);
-      const { value: secondControlValue } = formGroup.get(secondControlName);
+      const { value: firstControlValue } = formGroup.controls[firstControlName];
+      const { value: secondControlValue } = formGroup.controls[secondControlName];
       return firstControlValue === secondControlValue
         ? null
         : {
