@@ -15,9 +15,9 @@
             [(ngModel)]="userInfo.userName"
             name="username">
           <mat-error *ngIf="username.touched && !username.valid">
-            <span *ngIf="username.errors.required">Username is required</span>
-            <span *ngIf="username.errors.minlength || username.errors.maxlength">Length from 6 to 32 characters</span>
-            <span *ngIf="!(username.errors.minlength || username.errors.maxlength) && username.errors.pattern">Only alphabet</span>
+            <span *ngIf="username.errors['required']">Username is required</span>
+            <span *ngIf="username.errors['minlength'] || username.errors['maxlength']">Length from 6 to 32 characters</span>
+            <span *ngIf="!(username.errors['minlength'] || username.errors['maxlength']) && username.errors['pattern']">Only alphabet</span>
           </mat-error>
         </mat-form-field>
       </div>
@@ -36,9 +36,9 @@
             [(ngModel)]="userInfo.password"
             name="password">
           <mat-error *ngIf="password.touched && !password.valid">
-            <span *ngIf="password.errors.required">Password is required</span>
-            <span *ngIf="password.errors.minlength || password.errors.maxlength">Length from 6 to 32 characters</span>
-            <span *ngIf="!(password.errors.minlength || password.errors.maxlength) && password.errors.pattern">
+            <span *ngIf="password.errors['required']">Password is required</span>
+            <span *ngIf="password.errors['minlength'] || password.errors['maxlength']">Length from 6 to 32 characters</span>
+            <span *ngIf="!(password.errors['minlength'] || password.errors['maxlength']) && password.errors['pattern']">
               Only alphabet, digit and at least one of !@#$%^&*
             </span>
           </mat-error>
